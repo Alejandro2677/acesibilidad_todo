@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Resultados</title>
+  <style>
+    body { font-family: Verdana; }
+    table { width: 100%; border-collapse: collapse; }
+    td { border: 1px solid #ddd; padding: 6px; }
+    .btn { background: #cccccc; color: #ffffff; border: none; padding: 8px 12px; }
+    .nav-links { margin-bottom: 14px; }
+    .nav-links a,
+    a.link-btn {
+      display: inline-block;
+      padding: 6px 10px;
+      margin: 3px 6px 3px 0;
+      border: 1px solid #666;
+      border-radius: 6px;
+      color: #1b1b1b;
+      background: #efefef;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .nav-links a:hover,
+    a.link-btn:hover { background: #e3e3e3; }
+    .nav-links a:focus,
+    a.link-btn:focus { outline: 2px solid #1f4fbf; outline-offset: 2px; }
+    .media-placeholder {
+      width: 150px;
+      height: 150px;
+      border: 1px dashed #9a9a9a;
+      border-radius: 8px;
+      background: #f4f4f4;
+      color: #555;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 8px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <p class="nav-links">
+      <a href="index-landing.html">Landing</a>
+      <a href="index-form.html">Formulario</a>
+      <a href="index-table.html">Tabla</a>
+    </p>
+    <h4>Panel</h4>
+    <h2>Resultados de ventas</h2>
+    <table>
+      <tr>
+        <td>Mes</td>
+        <td>Total</td>
+        <td>Estado</td>
+      </tr>
+      <tr>
+        <td>Enero</td>
+        <td>1200</td>
+        <td>ok</td>
+      </tr>
+      <tr>
+        <td>Febrero</td>
+        <td>950</td>
+        <td>ok</td>
+      </tr>
+    </table>
+    <br>
+    <button class="btn" onclick="location.href='index-form.html'">Ir al formulario</button>
+    <a class="link-btn" href="index-landing.html">Mas</a>
+    <div class="media-placeholder">Sin grafico</div>
+  </div>
+</body>
+</html>

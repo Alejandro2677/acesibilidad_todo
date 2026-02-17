@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultados de ventas accesibles | WCAG 2.2</title>
+  <style>
+    :root {
+      --text: #111827;
+      --bg: #ffffff;
+      --line: #9ca3af;
+      --header-bg: #e5e7eb;
+      --focus: #ff8c00;
+      --action: #00388f;
+      --action-text: #ffffff;
+    }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      font-size: 18px;
+    }
+    :focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+    header, main, footer {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    caption {
+      text-align: left;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 0.7rem;
+      text-align: left;
+    }
+    th {
+      background: var(--header-bg);
+      font-weight: 700;
+    }
+    .btn {
+      margin-top: 1rem;
+      background: var(--action);
+      color: var(--action-text);
+      border: 1px solid var(--action);
+      border-radius: 6px;
+      font: inherit;
+      padding: 0.6rem 1rem;
+      cursor: pointer;
+      display: inline-block;
+      text-decoration: none;
+    }
+    .icon {
+      width: 24px;
+      height: 24px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 0.4rem;
+    }
+    a {
+      color: #0a3a8c;
+      text-underline-offset: 2px;
+    }
+    a:hover { color: #062a66; }
+    a:focus-visible { border-radius: 4px; }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      padding: 0;
+      margin: 0.5rem 0 0 0;
+      flex-wrap: wrap;
+    }
+    nav a {
+      display: inline-block;
+      padding: 0.4rem 0.7rem;
+      border: 1px solid #8ea4c7;
+      border-radius: 999px;
+      background: #eef4ff;
+      text-decoration: none;
+    }
+    nav a:hover { background: #dfeaff; }
+    nav a[aria-current="page"] {
+      font-weight: 700;
+      background: #cfe0ff;
+      border-color: #5d7fb8;
+    }
+    .media-placeholder {
+      width: 150px;
+      height: 150px;
+      border: 2px dashed #9db2d4;
+      border-radius: 8px;
+      background: #eef3fb;
+      color: #2c4063;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      margin-top: 0.6rem;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Panel de ventas</h1>
+    <nav aria-label="Navegacion entre ejemplos accesibles">
+      <ul>
+        <li><a href="index-landing-accessible.html">Ir a landing</a></li>
+        <li><a href="index-form-accessible.html">Ir a formulario</a></li>
+        <li><a href="index-table-accessible.html" aria-current="page">Ir a tabla de ventas</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="Navegacion de informes">
+      <a href="#tabla-ventas">Ir a tabla</a>
+      <a href="#resumen">Ir a resumen</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="tabla-ventas" aria-labelledby="titulo-tabla">
+      <h2 id="titulo-tabla">Resultados de ventas 2026</h2>
+      <table>
+        <caption>Totales mensuales y estado de cumplimiento de objetivo</caption>
+        <thead>
+          <tr>
+            <th scope="col">Mes</th>
+            <th scope="col">Total (EUR)</th>
+            <th scope="col">Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Enero</th>
+            <td>1.200</td>
+            <td><span aria-label="Cumple objetivo">OK</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Febrero</th>
+            <td>950</td>
+            <td><span aria-label="Cumple objetivo">OK</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="resumen" aria-labelledby="titulo-acciones">
+      <h2 id="titulo-acciones">Acciones</h2>
+      <a class="btn" href="informe-ventas-2026.txt" download aria-label="Descargar informe de ventas 2026 en texto">
+        <span class="icon" aria-hidden="true">[PDF]</span>
+        Descargar informe
+      </a>
+      <p><a href="index-landing-accessible.html">Ver detalle completo de ventas</a></p>
+      <div class="media-placeholder" aria-hidden="true">Sin grafico</div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Ultima actualizacion: 17/02/2026</p>
+  </footer>
+</body>
+</html>

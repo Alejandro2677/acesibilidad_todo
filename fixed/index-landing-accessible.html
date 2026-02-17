@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acme Studio | Sitio accesible WCAG 2.2</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --hero-bg: #0b1f4a;
+      --hero-text: #ffffff;
+      --text: #111827;
+      --surface: #f7f9fc;
+      --focus: #ffbf47;
+      --link: #00388f;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 18px;
+    }
+    a {
+      color: var(--link);
+      text-underline-offset: 2px;
+    }
+    a:hover { color: #062a66; }
+    :focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      background: #000;
+      color: #fff;
+      padding: 0.7rem 1rem;
+    }
+    .skip-link:focus {
+      left: 1rem;
+      top: 1rem;
+      z-index: 1000;
+    }
+    header {
+      background: var(--hero-bg);
+      color: var(--hero-text);
+      padding: 1rem;
+    }
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    nav a { color: #ffffff; font-weight: 700; }
+    .global-nav {
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid #4a67a5;
+    }
+    .global-nav a {
+      display: inline-block;
+      padding: 0.4rem 0.7rem;
+      border: 1px solid #9cb3ff;
+      border-radius: 999px;
+      background: #223a81;
+      text-decoration: none;
+    }
+    .global-nav a:hover { background: #2d4ea9; }
+    .global-nav a[aria-current="page"] {
+      background: #3b62ca;
+      border-color: #c0d1ff;
+    }
+    .hero-placeholder {
+      width: 100%;
+      max-width: 900px;
+      height: 220px;
+      margin-top: 1rem;
+      border: 2px dashed #8fb4ff;
+      border-radius: 10px;
+      background: #214386;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+    main { padding: 1rem; }
+    section {
+      background: var(--surface);
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+    section a {
+      display: inline-block;
+      padding: 0.45rem 0.7rem;
+      border: 1px solid #a8b7d2;
+      border-radius: 6px;
+      background: #edf2fb;
+      text-decoration: none;
+    }
+    section a:hover { background: #dde8f8; }
+    label { display: block; font-weight: 700; margin-bottom: 0.5rem; }
+    input, button {
+      font: inherit;
+      padding: 0.55rem;
+      border: 1px solid #6b7280;
+      border-radius: 6px;
+    }
+    button {
+      background: #00388f;
+      color: #fff;
+      border-color: #00388f;
+      font-weight: 700;
+      margin-top: 0.7rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
+
+  <header>
+    <div class="container">
+      <p>Acme Studio</p>
+      <nav aria-label="Navegacion principal">
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <nav class="global-nav" aria-label="Navegacion entre ejemplos accesibles">
+        <ul>
+          <li><a href="index-landing-accessible.html" aria-current="page">Ir a landing</a></li>
+          <li><a href="index-form-accessible.html">Ir a formulario</a></li>
+          <li><a href="index-table-accessible.html">Ir a tabla de ventas</a></li>
+        </ul>
+      </nav>
+      <h1 id="inicio">Diseno y desarrollo accesible</h1>
+      <p>Soluciones web centradas en usabilidad, rendimiento y accesibilidad.</p>
+      <div class="hero-placeholder" aria-hidden="true">Bloque visual sin imagen</div>
+    </div>
+  </header>
+
+  <main id="contenido-principal" tabindex="-1">
+    <div class="container">
+      <section id="servicios" aria-labelledby="titulo-servicios">
+        <h2 id="titulo-servicios">Que hacemos</h2>
+        <p>Diseno web, identidad visual y posicionamiento SEO tecnico con enfoque inclusivo.</p>
+        <p><a href="index-table-accessible.html">Leer mas sobre nuestros servicios</a></p>
+      </section>
+
+      <section id="contacto" aria-labelledby="titulo-contacto">
+        <h2 id="titulo-contacto">Contacto</h2>
+        <form action="index-form-accessible.html" method="get">
+          <label for="email">Correo electronico para respuesta</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+          <button type="submit">Enviar consulta</button>
+        </form>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Landing</title>
+  <style>
+    body { margin: 0; font-family: "Times New Roman", serif; }
+    .hero { background: #5a4bff; color: #8e83ff; padding: 40px; }
+    .menu a {
+      display: inline-block;
+      margin-right: 10px;
+      color: #ffffff;
+      background: #1f2f84;
+      border: 1px solid #9cb3ff;
+      border-radius: 6px;
+      padding: 6px 10px;
+      text-decoration: none;
+    }
+    .menu a:hover { background: #2c42ad; }
+    .menu a:focus { outline: 2px solid #ffd24a; outline-offset: 2px; }
+    .card { margin: 20px; padding: 20px; border: 1px solid #eee; }
+    .card a {
+      display: inline-block;
+      padding: 6px 10px;
+      border: 1px solid #444;
+      border-radius: 6px;
+      text-decoration: none;
+      color: #111;
+      background: #f2f2f2;
+    }
+    .card a:hover { background: #e7e7e7; }
+    .card a:focus { outline: 2px solid #1f4fbf; outline-offset: 2px; }
+    .media-placeholder {
+      width: 100%;
+      max-width: 900px;
+      height: 220px;
+      border: 1px dashed #9cb3ff;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.18);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 12px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="menu">
+      <a href="index-landing.html">Inicio</a>
+      <a href="index-table.html">Servicios</a>
+      <a href="index-form.html">Contacto</a>
+    </div>
+    <h1>Acme Studio</h1>
+    <h4>Diseno y desarrollo</h4>
+    <div class="media-placeholder">Sin imagen principal</div>
+  </div>
+  <div class="card" id="servicios">
+    <h3>Que hacemos</h3>
+    <p>Web, branding y SEO.</p>
+    <a href="index-table.html">Leer mas</a>
+  </div>
+  <div class="card" id="contacto">
+    <h2>Contacto</h2>
+    <input type="text" placeholder="Tu email">
+    <button onclick="location.href='index-form.html'">OK</button>
+  </div>
+</body>
+</html>

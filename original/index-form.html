@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Registro rapido</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f5f5f5; color: #888; }
+    .box { width: 500px; margin: 20px auto; background: #fff; padding: 20px; }
+    input, select, button { margin: 8px 0; padding: 8px; width: 100%; }
+    .tiny { font-size: 11px; color: #aaa; }
+    .nav-links { margin-bottom: 14px; }
+    .nav-links a,
+    a.link-btn {
+      display: inline-block;
+      padding: 6px 10px;
+      margin: 3px 6px 3px 0;
+      border: 1px solid #888;
+      border-radius: 6px;
+      color: #333;
+      background: #f0f0f0;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .nav-links a:hover,
+    a.link-btn:hover { background: #e2e2e2; }
+    .nav-links a:focus,
+    a.link-btn:focus { outline: 2px solid #1f4fbf; outline-offset: 2px; }
+    .media-placeholder {
+      width: 100%;
+      height: 120px;
+      border: 1px dashed #9a9a9a;
+      border-radius: 8px;
+      background: #f4f4f4;
+      color: #555;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <p class="nav-links">
+      <a href="index-landing.html">Landing</a>
+      <a href="index-form.html">Formulario</a>
+      <a href="index-table.html">Tabla</a>
+    </p>
+    <h3>Formulario</h3>
+    <h1>Alta de usuario</h1>
+    <div class="media-placeholder">Sin imagen de cabecera</div>
+    <form action="index-table.html">
+      <input type="text" placeholder="Nombre">
+      <input type="email" placeholder="Correo">
+      <input type="password" placeholder="Clave">
+      <select>
+        <option>Espana</option>
+        <option>Mexico</option>
+      </select>
+      <input type="checkbox"> Acepto
+      <button>Enviar</button>
+    </form>
+    <a class="link-btn" href="index-table.html">Click aqui</a>
+    <p class="tiny">Si tienes dudas llama al 555-22-22</p>
+  </div>
+</body>
+</html>

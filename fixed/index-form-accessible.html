@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de usuario accesible | WCAG 2.2</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #f7f9fc;
+      --text: #111827;
+      --muted: #374151;
+      --accent: #0b57d0;
+      --focus: #ff8c00;
+      --border: #d1d5db;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 18px;
+    }
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      background: #000;
+      color: #fff;
+      padding: 0.75rem 1rem;
+      z-index: 1000;
+    }
+    .skip-link:focus {
+      left: 1rem;
+      top: 1rem;
+    }
+    :focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+    header, main, footer {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem;
+    }
+    label { display: block; font-weight: 700; margin-top: 1rem; }
+    input, select, button {
+      width: 100%;
+      font: inherit;
+      padding: 0.6rem;
+      border: 1px solid #6b7280;
+      border-radius: 6px;
+      background: #fff;
+      color: var(--text);
+    }
+    .help { color: var(--muted); margin: 0.4rem 0 0 0; }
+    .inline { display: flex; align-items: start; gap: 0.6rem; margin-top: 1rem; }
+    .inline input { width: auto; margin-top: 0.2rem; }
+    button {
+      margin-top: 1.2rem;
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+      font-weight: 700;
+      cursor: pointer;
+    }
+    a {
+      color: #0a3a8c;
+      text-underline-offset: 2px;
+    }
+    a:hover { color: #062a66; }
+    a:focus-visible { border-radius: 4px; }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      padding: 0;
+      margin: 0.5rem 0 0 0;
+      flex-wrap: wrap;
+    }
+    nav a {
+      display: inline-block;
+      padding: 0.4rem 0.7rem;
+      border: 1px solid #8ea4c7;
+      border-radius: 999px;
+      background: #eef4ff;
+      text-decoration: none;
+    }
+    nav a:hover { background: #dfeaff; }
+    nav a[aria-current="page"] {
+      font-weight: 700;
+      background: #cfe0ff;
+      border-color: #5d7fb8;
+    }
+    .media-placeholder {
+      width: 100%;
+      max-width: 500px;
+      height: 120px;
+      border: 2px dashed #9db2d4;
+      border-radius: 8px;
+      background: #eef3fb;
+      color: #2c4063;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#contenido" accesskey="s" aria-keyshortcuts="Alt+Shift+S">Saltar al contenido principal</a>
+  <header>
+    <h1>Alta de usuario</h1>
+    <p>Formulario de registro con mejoras de accesibilidad WCAG 2.2 (niveles A y AA, con mejoras AAA).</p>
+    <nav aria-label="Navegacion entre ejemplos accesibles">
+      <ul>
+        <li><a href="index-landing-accessible.html">Ir a landing</a></li>
+        <li><a href="index-form-accessible.html" aria-current="page">Ir a formulario</a></li>
+        <li><a href="index-table-accessible.html">Ir a tabla de ventas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenido" tabindex="-1">
+    <section class="panel" aria-labelledby="titulo-formulario">
+      <h2 id="titulo-formulario">Datos personales</h2>
+      <div class="media-placeholder" aria-hidden="true">Cabecera visual sin imagen</div>
+
+      <form action="index-table-accessible.html" method="get" novalidate aria-describedby="ayuda-formulario">
+        <p id="ayuda-formulario" class="help">Todos los campos marcados con * son obligatorios.</p>
+
+        <label for="nombre">Nombre completo *</label>
+        <input id="nombre" name="nombre" type="text" autocomplete="name" required>
+
+        <label for="correo">Correo electronico *</label>
+        <input id="correo" name="correo" type="email" autocomplete="email" required aria-describedby="ayuda-correo">
+        <p id="ayuda-correo" class="help">Ejemplo: nombre@dominio.com</p>
+
+        <label for="clave">Contrasena *</label>
+        <input id="clave" name="clave" type="password" autocomplete="new-password" required minlength="10">
+
+        <label for="pais">Pais</label>
+        <select id="pais" name="pais">
+          <option value="">Selecciona una opcion</option>
+          <option value="es">Espana</option>
+          <option value="mx">Mexico</option>
+          <option value="ar">Argentina</option>
+        </select>
+
+        <fieldset>
+          <legend>Consentimiento</legend>
+          <div class="inline">
+            <input id="terminos" name="terminos" type="checkbox" required>
+            <label for="terminos">Acepto la politica de privacidad y las condiciones de uso *</label>
+          </div>
+        </fieldset>
+
+        <button type="submit">Crear cuenta</button>
+      </form>
+
+      <p><a href="#ayuda-formulario">Leer ayuda del formulario</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Soporte: <a href="tel:+34555222222">555 22 22 22</a></p>
+    <p><a href="index-table-accessible.html">Continuar al panel de ventas</a></p>
+  </footer>
+</body>
+</html>
