@@ -162,7 +162,7 @@ After:
 
 Repeat the same pattern for `index-table` and `index-landing`.
 
-# Prompt maestro (Copilot / Gemini / otros asistentes)
+# Prompt maestro 
 
 Actua como especialista senior en accesibilidad web (WCAG 2.2 + WAI-ARIA + HTML semantico).
 
