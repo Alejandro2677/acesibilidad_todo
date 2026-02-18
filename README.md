@@ -164,9 +164,6 @@ Repeat the same pattern for `index-table` and `index-landing`.
 
 # Prompt maestro (Copilot / Gemini / otros asistentes)
 
-Usa este prompt en una sola ejecucion sobre un HTML original (sin accesibilidad) para obtener una version corregida y trazable.
-
-
 Actua como especialista senior en accesibilidad web (WCAG 2.2 + WAI-ARIA + HTML semantico).
 
 Objetivo:
